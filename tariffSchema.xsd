@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<schema version="1.0"
+           xmlns="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           targetNamespace="http://www.example.com/tariffs"
+           xmlns:tns="http://www.example.com/tariffs">
+    <element name="tariffs">
+        <complexType>
+            <sequence>
+                <element name="tariff"
+                         type="tns:Tariff"
+                         minOccurs="1"
+                         maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+    <complexType name="Tariff">
+        <sequence>
+            <element name="name" type="string" />
+            <element name="payroll" type="integer" />
+            <element name="callprices" type="tns:Callprices"/>
+            <element name="SMSprice" type="float" />
+            <element name="parameters" type="tns:Parameters" />
+        </sequence>
+        <attribute name="id" type="integer" /> 
+        <attribute name="operator" use="optional" default="Tele2" >
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="Tele2"></enumeration>
+                    <enumeration value="МТС"></enumeration>
+                    <enumeration value="Билайн"></enumeration>
+                    <enumeration value="Мегафон"></enumeration>
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+    <complexType name="Callprices">
+        <sequence>
+            <element name="inside" type="float" />
+            <element name="outside" type="float" />
+            <element name="stationaryphone" type="float" />
+        </sequence>
+    </complexType>
+    <complexType name="Parameters">
+        <sequence>
+            <element name="likephone" type="integer" />
+            <element name="tariffing" type="string" />
+            <element name="connection" type="integer" />
+        </sequence>
+    </complexType>
+</schema>

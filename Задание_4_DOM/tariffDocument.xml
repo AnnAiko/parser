@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tariffs
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns='http://www.example.com/tariffs'
+    xsi:schemaLocation='http://www.example.com/tariffs tariffSchema.xsd'
+    >  
+    
+    <tariff id="1" operator="Tele2">
+        <name>2Plus</name>
+        <payroll>220</payroll>
+        <callprices>
+            <inside>0.9</inside>
+            <outside>2.4</outside>
+            <stationaryphone>2.0</stationaryphone>
+        </callprices>
+        <SMSprice>0.96</SMSprice> 
+        <parameters>
+            <likephone>2</likephone>
+            <tariffing>поминутная</tariffing>
+            <connection>0</connection>
+        </parameters>
+    </tariff>
+    <tariff id="2" operator="МТС">
+        <name>Тарифище</name>
+        <payroll>585</payroll>
+        <callprices>
+            <inside>1.5</inside>
+            <outside>3.0</outside>
+            <stationaryphone>2.6</stationaryphone>
+        </callprices>
+        <SMSprice>2</SMSprice>
+        <parameters>
+            <likephone>0</likephone>
+            <tariffing>12-секундная</tariffing>
+            <connection>30</connection>
+        </parameters>
+    </tariff>
+</tariffs>
